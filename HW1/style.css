@@ -1,0 +1,437 @@
+:root {
+  --bg:#fff;
+  --text:#000;
+  --side:#f4f4f4;
+}
+
+body.dark {
+  --bg:#121212;
+  --text:#eee;
+  --side:#1e1e1e;
+}
+
+body {
+  margin:0;
+  display:flex;
+  height:100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.sidebar {
+  padding-right: 10px;
+}
+
+.sidebar input,
+.sidebar select,
+.sidebar button {
+  width:calc(100% - 10px);
+  margin-bottom:6px;
+  padding:6px;
+}
+
+.top-buttons {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+  margin-right: 10px;
+}
+
+.top-buttons button {
+  width: calc(54%);
+  margin-bottom: 5px;
+}
+
+.note-btn {
+  background: #d8b4fe;
+  color: #2d0a3d;
+  border: none;
+  border-radius: 6px;
+}
+
+.folder-btn {
+  background: #86efac; 
+  color: #064e3b;
+  border: none;
+  border-radius: 6px;
+}
+
+.format-bar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.format-bar button {
+  width: auto;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.editor-box {
+  width: 50%;
+  height: 100%;
+  padding: 10px;
+  overflow: auto;
+  outline: none;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid #ccc;
+}
+
+.note-btn:hover {
+  background: #c084fc;
+}
+
+.folder-btn:hover {
+  background: #4ade80;
+}
+
+.item {
+  padding:6px;
+  cursor:pointer;
+  border-radius:6px;
+  margin-right: 10px;
+}
+
+.item:hover {
+  background:#ddd;
+}
+
+body.dark .item:hover {
+  background:#333;
+}
+
+.pinned {
+  font-weight:bold;
+}
+
+.main {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  padding:20px;
+}
+
+.title {
+  font-size:22px;
+  padding:8px;
+  margin-bottom:10px;
+}
+
+.editor {
+  display:flex;
+  gap:10px;
+  flex:1;
+}
+
+textarea {
+  width:50%;
+  height:100%;
+}
+
+.preview {
+  margin-top:15px;
+  padding-top:10px;
+  border-top:1px solid #ddd;
+}
+
+.actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.format-bar button {
+  width: auto;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.format-bar input[type="color"] {
+  width: 35px;
+  height: 30px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.editor-box {
+  width:100%;
+  min-height:250px;
+  padding:10px;
+  border:1px solid #ccc;
+  outline:none;
+  overflow:auto;
+  margin-bottom:10px;
+  margin-left: 30px;
+  margin-right: auto;  
+  width: calc(100% - 25px);
+}
+
+.folder {
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 6px;
+  padding-right: 10px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.folder:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.folder-actions {
+  display: flex;
+  gap: 5px;
+  margin-left: 5px;
+}
+
+.folder-actions button {
+  width: auto;
+  margin: 0;
+  padding: 2px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.folder-edit {
+  background: #3b82f6;
+  color: white;
+}
+
+.folder-delete {
+  background: #ef4444;
+  color: white;
+}
+
+.folder-edit:hover {
+  background: #2563eb;
+}
+
+.folder-delete:hover {
+  background: #dc2626;
+}
+
+.folder-name {
+  flex: 1;
+  cursor: pointer;
+}
+
+.editor-box pre {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: monospace;
+}
+
+.editor-box code {
+  background: rgba(0,0,0,0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+body.dark .editor-box code {
+  background: rgba(255,255,255,0.1);
+}
+
+.editor-box h1, .editor-box h2, .editor-box h3,
+.editor-box h4, .editor-box h5, .editor-box h6 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.editor-box ul, .editor-box ol {
+  margin: 8px 0;
+  padding-right: 20px;
+}
+
+.editor-box a {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+body.dark .editor-box a {
+  color: #60a5fa;
+}
+
+.editor-box blockquote {
+  border-right: 4px solid #ccc;
+  margin: 8px 0;
+  padding-right: 12px;
+  color: #666;
+}
+
+body.dark .editor-box blockquote {
+  border-right-color: #444;
+  color: #aaa;
+}
+
+#list {
+  padding-right: 10px;
+}
+
+.folder-notes {
+  padding-right: 10px;
+}
+
+div[onclick="restoreFromBackup()"] {
+  margin-right: 10px !important;
+  width: calc(100% - 20px);
+}
+
+#search {
+  margin-right: 10px;
+  width: calc(100% - 22px);
+}
+
+#sort {
+  margin-right: 10px;
+  width: calc(100% - 22px);
+}
+
+button[onclick="exportJSON()"],
+button[onclick="toggleDark()"],
+#importFile {
+  margin-right: 10px;
+  width: calc(100% - 22px);
+}
+
+body.dark .format-bar button,
+body.dark .actions button {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.dark .folder-select {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+body.dark .editor-box {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+body.dark .format-bar {
+  background-color: #333333 !important;
+}
+
+body.dark .actions {
+  background-color: #333333 !important;
+}
+
+body.dark .sidebar input#search {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+body.dark .sidebar input#search::placeholder {
+  color: #aaa;
+}
+
+body.dark .top-buttons button {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #444;
+}
+
+body.dark select#sort {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+body.dark select#sort option {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark button[onclick="exportJSON()"] {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #444;
+}
+
+body.dark button[onclick="toggleDark()"] {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #444;
+}
+
+body.dark .sidebar input#importFile {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark .restore-backup {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+body.dark select#folder {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+body.dark .title {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+body.dark .item {
+  color: #ffffff;
+}
+
+body.dark .folder-name {
+  color: #ffffff;
+}
+
+body.dark .pinned-header {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+<style>
+.pinned-header {
+  margin-top: 10px;
+  font-weight: bold;
+  padding: 6px;
+  border-radius: 6px;
+  background-color: #d8b4fe;
+  color: #000000;
+}
+
+body.dark .pinned-header {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+}
+
+.restore-backup-btn {
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #d8b4fe;
+  color: #000000;
+}
+
+body.dark .restore-backup-btn {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+}
+</style>

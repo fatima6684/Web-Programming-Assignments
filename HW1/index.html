@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <title>Note</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%238B5CF6'/></svg>">
+    <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+
+<div class="sidebar">
+  <input id="search" placeholder="جستجو..." style="margin-top: 20px;">
+
+<div class="top-buttons">
+    <button class="folder-btn" onclick="addFolder()">+ پوشه جدید</button>
+    <button class="note-btn" onclick="addNote()">+ یادداشت جدید</button>
+  </div>
+
+<select id="sort">
+<option value="date">تاریخ</option>
+<option value="title">عنوان</option>
+</select>
+
+<div class="restore-backup-btn" onclick="restoreFromBackup()">
+  💾 بخش بازیابی یادداشت‌ها 💾
+</div>
+<button onclick="exportJSON()">Export</button>
+<input type="file" id="importFile">
+
+<button onclick="toggleDark()">Dark mode</button>
+
+<div id="list"></div>
+
+</div>
+
+<div class="main">
+
+    <input id="title" class="title" placeholder="عنوان">
+  
+    <div class="format-bar">
+      <button onclick="format('bold')"><b>B</b></button>
+      <button onclick="format('italic')"><i>I</i></button>
+      <button onclick="format('underline')"><u>U</u></button>
+      <input type="color" onchange="setColor(this.value)">
+    </div>
+  
+    <div id="content" class="editor-box" contenteditable="true"></div>
+  
+    <select id="folder" class="folder-select" style="background-color: #d8b4fe; padding: 6px; border-radius: 6px; margin: 10px 0;"></select>
+    <div class="actions">
+      <button onclick="togglePin()" style="background-color: #86efac; color: black; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">📌 پین</button>
+      <button onclick="deleteNote()" style="background-color: #d8b4fe; color: black; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">حذف</button>
+    </div>
+    </div>
+  
+  
+  </div>
+
+<script src="main.js"></script>
+</body>
+</html>
